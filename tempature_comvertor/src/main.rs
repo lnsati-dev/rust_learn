@@ -1,6 +1,6 @@
 use std::io::{self, Write};
 
-fn convertor() {
+fn convertor() -> f64 {
     loop {
         print!("Enter the Tempature  ");
         io::stdout().flush().unwrap();
@@ -10,10 +10,7 @@ fn convertor() {
         io::stdin().read_line(&mut num).expect("Failed to read");
         println!();
         match num.trim().parse::<f64>() {
-            Ok(num) => {
-                println!("You entered {}", num);
-                break;
-            }
+            Ok(num) => return num,
             Err(_) => println!("Invalid input"),
         }
     }
@@ -21,7 +18,8 @@ fn convertor() {
 
 fn process_imput(letter: &str) {
     println!("Selected '{}' ", letter);
-    convertor();
+    let numt = convertor();
+    println!("You entered {}", numt);
 }
 fn main() {
     println!("Tempature Convertor");
