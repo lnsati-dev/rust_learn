@@ -1,8 +1,9 @@
 use std::io::{self, Write};
 
 fn convertor() {
-    print!("Enter the Tempature  ");
+    print!("Enter the Tempature");
     io::stdout().flush().unwrap();
+    println!();
 }
 
 fn process_imput(letter: &str) {
