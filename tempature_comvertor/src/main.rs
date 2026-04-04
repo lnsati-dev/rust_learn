@@ -1,9 +1,22 @@
 use std::io::{self, Write};
 
 fn convertor() {
-    print!("Enter the Tempature");
-    io::stdout().flush().unwrap();
-    println!();
+    loop {
+        print!("Enter the Tempature  ");
+        io::stdout().flush().unwrap();
+
+        let mut num = String::new();
+
+        io::stdin().read_line(&mut num).expect("Failed to read");
+        println!();
+        match num.trim().parse::<f64>() {
+            Ok(num) => {
+                println!("You entered {}", num);
+                break;
+            }
+            Err(_) => println!("Invalid input"),
+        }
+    }
 }
 
 fn process_imput(letter: &str) {
