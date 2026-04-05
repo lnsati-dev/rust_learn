@@ -18,9 +18,21 @@ fn convertor() -> f64 {
 
 fn process_imput(letter: &str) {
     println!("Selected '{}' ", letter);
-    let numt = convertor();
-    println!("You entered {}", numt);
+    if letter == "c" {
+        let numt = convertor();
+        let numf = (numt * SF) + FP;
+        println!("This is {:.1}'F", numf);
+    } else {
+        let numt = convertor();
+        let numc = (numt - FP) * ISF;
+        println!("This is {:.1}'C", numc);
+    }
 }
+
+const FP: f64 = 32.0;
+const SF: f64 = 9.0 / 5.0;
+const ISF: f64 = 5.0 / 9.0;
+
 fn main() {
     println!("Tempature Convertor");
     loop {
