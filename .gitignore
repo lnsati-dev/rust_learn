@@ -1,0 +1,3 @@
+# ingnore the target folder in any sub directory
+**/target/
+
