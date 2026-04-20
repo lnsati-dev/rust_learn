@@ -1,7 +1,12 @@
 //use std::string;
 
 fn main() {
-    let mut s = String::from("hello");
-    s = String::from("Ahoy");
-    println!("{s}");
+    let a = [5; 10];
+    let mut sum = 0;
+    for x in a {
+        println!("{x}");
+        sum += x;
+    }
+
+    println!("{sum}");
 }
